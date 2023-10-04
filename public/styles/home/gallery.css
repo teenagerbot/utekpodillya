@@ -1,0 +1,13 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+}
+
+.gallery img {
+    width: calc(100%);
+}
+@media screen and (max-width: 500px) {
+    .gallery {
+        display: none;
+    }
+}

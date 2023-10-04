@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="body_hide">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../styles/home/header.css">
+    <link rel="stylesheet" href="../styles/home/gallery.css">
+    <link rel="stylesheet" href="../styles/home/menu.mobile.css">
+    <link rel="stylesheet" href="../styles/home/about.css">
+    <link rel="stylesheet" href="../styles/home/slider.css">
+    <link rel="stylesheet" href="../styles/home/headers.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
 </head>
 <body>
+<span class="material-symbols-outlined" id="menu-burger">menu</span>
+<div class="menu-container">
+    <div class="menu">
+        <div class="menu-header">
+            <div class="menu-header-avatar">
+                <img src="../imgs/avatar.png" alt="avatar" class="avatar">
+                <small-text>ООО «УТЕК-ПОДІЛЛЯ»</small-text>
+            </div>
+        </div>
+        <a class="active menu-item" href="#home" title="Домашня">
+            <span class="material-symbols-outlined">home</span>
+            <text>Домашня</text>
+        </a>
+        <a href="#contact" title="Контакти" class="menu-item" title="Контакти">
+            <span class="material-symbols-outlined">contacts</span>
+            <text>Контакти</text>
+        </a>
+        <a href="#ref" class="menu-item" title="Референц-список">
+            <span class="material-symbols-outlined">receipt_long</span>
+            <text>Референц-список</text>
+        </a>
+        <a href="#about" class="menu-item" title="Про нас">
+            <span class="material-symbols-outlined">info</span>
+            <text>Про нас</text>
+        </a>
+    </div>
+</div>
+<div id="web">
+    <div class="app-locker"></div>
 <div class="header">
     <a href="#default" class="logo">
         <img src="../imgs/logo.png" alt="logo" class="logo">
@@ -31,6 +66,61 @@
         </a>
     </div>
 </div>
+<div class="gallery">
+    <img src="../imgs/img-1.png">
+    <img src="../imgs/img-2.png">
+    <img src="../imgs/img-3.png">
+</div>
+    <div class="about-us">
+        <h1>Наша продукція</h1>
+        <swiper-container class="mySwiper" init="false">
+            <swiper-slide>
+                <img src="../imgs/1.png">
+                <item>Сухі силові</item>
+            </swiper-slide>
+            <swiper-slide>
+                <img src="../imgs/2.png">
+                <item>Сухі масляні</item>
+            </swiper-slide>
+            <swiper-slide>
+                <img src="../imgs/3.png">
+                <item>Низьковольтні панелі ЩО</item>
+            </swiper-slide>
+            <swiper-slide>
+                <img src="../imgs/4.png">
+                <item>Комплектні</item>
+            </swiper-slide>
+            <swiper-slide>
+                <img src="../imgs/5.png">
+                <item>Високовольтні комірки КСО</item>
+            </swiper-slide>
+        </swiper-container>
+        <h1>Про нас</h1>
+        <div class="text">
+            ТОВ «УТЕК-ПОДІЛЛЯ» дякує Вам за інтерес, виявлений до нашого підприємства. Пропонуємо до Вашої уваги перелік продукції, яку ми виробляємо та поставляємо:<br>
+            <ul>
+                <li>трансформатори силові масляні потужністю 10...4000 кВА.</li>
+                <li>трансформатори сухі потужністю 25...4000 кВА.</li>
+                <li>трансформаторні підстанції потужністю 25...2500 кВА різного виконання.</li>
+                <li>вимірювальні трансформатори струму та напруги (TJO, TPO (Чехія АББ), ТПЛ, ТШЛ, ТФЗМ, НОМ, НАМИ, ЗНОМ, ТБ та ін.), пр-во ЗВА, Укрелектроапарат, Свердловський завод трансформаторів струму.</li>
+                <li>камери збірні КСВ, распредщиты ЩО.</li>
+                <li>конденсаторні установки низьковольтні та високовольтні (Чехія ZEZ Silko)</li>
+                <li>вимикачі вакуумні навантаження 6, 10 кВ (Таврида, РЗВА, АББ).</li>
+                <li>вимикачі елегазові 6, 10, 35, 110, 150 кВ (АББ).</li>
+                <li>кабельно-провідникова продукція</li>
+                <li>обмежувачі перенапруги від 0,4 кВ ... (АББ).</li>
+                <li>перевірочні лабораторії (Хмельницький).</li>
+                <li>електроприводи вітчизняних та зарубіжних виробників.</li>
+                <li>високовольтні введення різних модифікацій.</li>
+                <li>мікропроцесорний захист.</li>
+                <li>ізолятори (Україна).</li>
+                <li>роз'єднувачі, ВНПР та багато іншого.</li>
+            </ul>
+            Все обладнання поставляється за цінами виробника, постійним замовникам надаються знижки. Обладнання, що поставляється, забезпечене гарантійними зобов'язаннями та сертифікатами якості. При замовленні обладнання наші фахівці нададуть кваліфіковану технічну консультацію.
+        </div>
+    </div>
+</div>
+<script src="../modules/menu/mobile.menu.js"></script>
     <script src="server.js"></script>
     <script src="j.js"></script>
 </body>

@@ -13,7 +13,6 @@ const io = sockets(server, {
 });
 // middlewares
 app.use(express.static('public'))
-
 // routes
 app.get('/hello', (req, res) => {
 	res.send("hello");
@@ -44,6 +43,6 @@ io.on('connection', (socket) => {
 		});
 	});
 });
-server.listen(3000, function() {
+server.listen(3000, "0.0.0.0", function() {
 	console.log('listening on 3000');
 });

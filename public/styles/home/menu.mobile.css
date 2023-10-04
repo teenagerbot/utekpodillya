@@ -1,0 +1,35 @@
+img.avatar {
+    border-radius: 50%;
+}
+
+.menu-header {
+    margin-bottom: 20px;
+    border-bottom: 2px black solid;
+}
+.menu-header-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #b4b3b3;
+    padding: 5px;
+}
+
+small-text {
+    font-size: 14px;
+    font-family: monospace;
+}
+span#menu-burger {
+    position: fixed;
+    font-size: 30px;
+}
+a.active.menu-item {
+    background: #ffab43;
+    pointer-events: none;
+}
+
+a.active.menu-item {
+    background: #ffab4382;
+    pointer-events: none;
+    /* width: fit-content; */
+    /* padding-right: 10px; */
+}
