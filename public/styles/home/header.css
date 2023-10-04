@@ -46,9 +46,14 @@ body {
     }
     .header-right {
         float: none;
+				border-top: 2px #241f31 solid;
     }
     .logo .logo {
         width: 100%;
+				/* border-bottom: 2px red solid; */
+				box-shadow: 0px 0px 10px;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
     }
 }
 @media screen and (min-width: 500px) {
