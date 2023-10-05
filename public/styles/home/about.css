@@ -1,6 +1,16 @@
-.about-us {
+.about-us, .reference-list, .dovira-div {
     padding: 10px;
     background: #cfcfcf;
     font-family: monospace;
     font-size: 20px;
+    transition: .3s linear;
+    margin-bottom: 40px;
+}
+.hidden-desktop {
+    opacity: 0;
+    transform: scale(0.3);
+}
+.hidden-mobile {
+    opacity: 0;
+    transform: rotateZ(180deg);
 }

@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="../styles/home/about.css">
     <link rel="stylesheet" href="../styles/home/slider.css">
     <link rel="stylesheet" href="../styles/home/headers.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../styles/home/production.css">
+    <link rel="stylesheet" href="../styles/home/dovira.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
 </head>
 <body>
@@ -23,10 +26,10 @@
                 <small-text>ООО «УТЕК-ПОДІЛЛЯ»</small-text>
             </div>
         </div>
-        <a class="active menu-item" href="#home" title="Домашня">
-            <span class="material-symbols-outlined">home</span>
-            <text>Домашня</text>
-        </a>
+<!--        <a class="active menu-item" href="#home" title="Домашня">-->
+<!--            <span class="material-symbols-outlined">home</span>-->
+<!--            <text>Домашня</text>-->
+<!--        </a>-->
         <a href="#contact" title="Контакти" class="menu-item" title="Контакти">
             <span class="material-symbols-outlined">contacts</span>
             <text>Контакти</text>
@@ -43,35 +46,35 @@
 </div>
 <div id="web">
     <div class="app-locker"></div>
-<div class="header">
-    <a href="#default" class="logo">
-        <img src="../imgs/logo.png" alt="logo" class="logo">
-    </a>
-    <div class="header-right">
-        <a class="active menu-item" href="#home" title="Домашня">
-            <span class="material-symbols-outlined">home</span>
-            <text>Домашня</text>
+    <div class="header">
+        <a href="#default" class="logo">
+            <img src="../imgs/logo.png" alt="logo" class="logo">
         </a>
-        <a href="#contact" title="Контакти" class="menu-item" title="Контакти">
-            <span class="material-symbols-outlined">contacts</span>
-            <text>Контакти</text>
-        </a>
-				<a href="#ref" class="menu-item" title="Референц-список">
-					<span class="material-symbols-outlined">receipt_long</span>
-					<text>Референц-список</text>
-				</a>
-        <a href="#about" class="menu-item" title="Про нас">
-            <span class="material-symbols-outlined">info</span>
-            <text>Про нас</text>
-        </a>
+        <div class="header-right">
+<!--            <a class="active menu-item" href="#home" title="Домашня" id="home">-->
+<!--                <span class="material-symbols-outlined">home</span>-->
+<!--                <text>Домашня</text>-->
+<!--            </a>-->
+            <a href="#contact" title="Контакти" class="menu-item" title="Контакти" id="contacts">
+                <span class="material-symbols-outlined">contacts</span>
+                <text>Контакти</text>
+            </a>
+            <a href="#ref" class="menu-item" title="Референц-список" id="reference">
+                <span class="material-symbols-outlined">receipt_long</span>
+                <text>Референц-список</text>
+            </a>
+            <a href="#about" class="menu-item" title="Про нас" id="aboutus">
+                <span class="material-symbols-outlined">info</span>
+                <text>Про нас</text>
+            </a>
+        </div>
     </div>
-</div>
-<div class="gallery">
-    <img src="../imgs/img-1.png">
-    <img src="../imgs/img-2.png">
-    <img src="../imgs/img-3.png">
-</div>
-    <div class="about-us">
+    <div class="gallery">
+        <img src="../imgs/img-1.png">
+        <img src="../imgs/img-2.png">
+        <img src="../imgs/img-3.png">
+    </div>
+    <div class="production">
         <h1>Наша продукція</h1>
         <swiper-container class="mySwiper" init="false">
             <swiper-slide>
@@ -95,14 +98,19 @@
                 <item>Високовольтні комірки КСО</item>
             </swiper-slide>
         </swiper-container>
+    </div>
+    <div class="about-us">
         <h1>Про нас</h1>
         <div class="text">
-            ТОВ «УТЕК-ПОДІЛЛЯ» дякує Вам за інтерес, виявлений до нашого підприємства. Пропонуємо до Вашої уваги перелік продукції, яку ми виробляємо та поставляємо:<br>
+            ТОВ «УТЕК-ПОДІЛЛЯ» дякує Вам за інтерес, виявлений до нашого підприємства. Пропонуємо до Вашої уваги перелік
+            продукції, яку ми виробляємо та поставляємо:<br>
             <ul>
                 <li>трансформатори силові масляні потужністю 10...4000 кВА.</li>
                 <li>трансформатори сухі потужністю 25...4000 кВА.</li>
                 <li>трансформаторні підстанції потужністю 25...2500 кВА різного виконання.</li>
-                <li>вимірювальні трансформатори струму та напруги (TJO, TPO (Чехія АББ), ТПЛ, ТШЛ, ТФЗМ, НОМ, НАМИ, ЗНОМ, ТБ та ін.), пр-во ЗВА, Укрелектроапарат, Свердловський завод трансформаторів струму.</li>
+                <li>вимірювальні трансформатори струму та напруги (TJO, TPO (Чехія АББ), ТПЛ, ТШЛ, ТФЗМ, НОМ, НАМИ,
+                    ЗНОМ, ТБ та ін.), пр-во ЗВА, Укрелектроапарат, Свердловський завод трансформаторів струму.
+                </li>
                 <li>камери збірні КСВ, распредщиты ЩО.</li>
                 <li>конденсаторні установки низьковольтні та високовольтні (Чехія ZEZ Silko)</li>
                 <li>вимикачі вакуумні навантаження 6, 10 кВ (Таврида, РЗВА, АББ).</li>
@@ -116,12 +124,69 @@
                 <li>ізолятори (Україна).</li>
                 <li>роз'єднувачі, ВНПР та багато іншого.</li>
             </ul>
-            Все обладнання поставляється за цінами виробника, постійним замовникам надаються знижки. Обладнання, що поставляється, забезпечене гарантійними зобов'язаннями та сертифікатами якості. При замовленні обладнання наші фахівці нададуть кваліфіковану технічну консультацію.
+            Все обладнання поставляється за цінами виробника, постійним замовникам надаються знижки. Обладнання, що
+            поставляється, забезпечене гарантійними зобов'язаннями та сертифікатами якості. При замовленні обладнання
+            наші фахівці нададуть кваліфіковану технічну консультацію.
         </div>
     </div>
+    <div class="dovira-div">
+        <h1>Нам довіряють</h1>
+        <div class="dovira">
+            <img src="../imgs/pluton.png">
+            <img src="../imgs/DARNYTSIA.png">
+            <img src="../imgs/inkoltd.png">
+            <img src="../imgs/jitomoblenergo.png">
+            <img src="../imgs/mrija.png">
+            <img src="../imgs/nasharyaba.png">
+            <img src="../imgs/DMK.png">
+            <img src="../imgs/lvivvodokanal.png">
+            <img src="../imgs/domorivne.png">
+        </div>
+    </div>
+    <div class="reference-list">
+        <h1>Референц-список</h1>
+        <h3>ТОВ «УТЕК-Поділля» надає Вам перелік наших постійних замовників:</h3>
+        <ol>
+            <li>ВАТ «Дніпровський металургійний комбінат ім. "Дзержинського", м. Дніпродзержинськ.</li>
+            <li>ЗАТ "Плутон", м. Запоріжжя.</li>
+            <li>Львівське міське комунальне підприємство "Львівводоканал", м. Львів.</li>
+            <li>Головне управління комунального господарства Київської міської ради (КМДА), м. Київ</li>
+            <li>ТОВ «НВП «Енергія – Альфа», м. Харків.</li>
+            <li>ТОВ "ЛІХТ-ТРЕЙД".</li>
+            <li>ТОВ "Варіант - Глобус", м. Львів.</li>
+            <li>ТОВ "Югсталтранс", м. Херсон.</li>
+            <li>ГП «Львівська залізниця « Здолбунівська ДС», г. Здолбунов.</li>
+            <li>ТОВ «Інко ЛТД», м. Пустовити.</li>
+            <li>ЗАТ "Фармацевтична фірма Дарниця", м. Київ.</li>
+            <li>ТОВ «Рівневодкомплект», м. Рівне.</li>
+            <li>ТОВ "Максімус - М", м. Луганськ.</li>
+            <li>ТОВ НВФ "Енергія", м. Коломия.</li>
+            <li>ТОВ "Електромонтаж - 425", м. Вінниця.</li>
+            <li>ВАТ "СПМК - 90", м. Дніпропетровськ.</li>
+            <li>ПАТ ЕК «Житомиробенерго», м. Житомир.</li>
+            <li>ДП «Электроспецбуд-Славутич»</li>
+            <li>ООО «БУД М» (Агрохолдинг «МРІЯ»), г. Тернополь.</li>
+            <li>ВАТ «Миронівський ЗВКК», (ТМ «НАША РЯБА»), м. Миронівка.</li>
+            <li>ТОВ «Компанія «АЗБІ», м. Київ.</li>
+            <li>ТОВ "Теркон - буд", м. Тернопіль.</li>
+            <li>ТОВ "Будівельний континет", м. Київ.</li>
+            <li>ТОВ ТД "Агропроменерго", м. Житомир.</li>
+            <li>ДП «Львівенергорембуд», ВАТ «Львівобленерго», м. Львів.</li>
+            <li>ТОВ "ТОП ЕНЕРГО", м. Київ.</li>
+            <li>ЗАТ "Дніпровська Пристань", м. Київ.</li>
+            <li>ВАТ "Луганський електроапаратний завод", м. Луганськ.</li>
+            <li>ТОВ "Західенергоспецмонтаж", м. Львів.</li>
+            <li>ТОВ "Фінпрофіль - Плюс", м. Київ.</li>
+            <li>ТОВ "Тернопільрайенергосервіс", м. Тернопіль.</li>
+            <li>ТОВ "Техноперспектива", м. Київ.</li>
+        </ol>
+    </div>
 </div>
+<script src="../modules/global/errorcatcher.js"></script>
 <script src="../modules/menu/mobile.menu.js"></script>
-    <script src="server.js"></script>
-    <script src="j.js"></script>
+<script src="server.js"></script>
+<script src="../scripts/home/menu.js"></script>
+<script src="../scripts/home/showcontent.js"></script>
+<script src="j.js"></script>
 </body>
 </html>

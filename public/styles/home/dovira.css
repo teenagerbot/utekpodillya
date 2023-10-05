@@ -1,0 +1,25 @@
+.dovira {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+    align-items: center;
+    grid-row-gap: 20px;
+}
+
+.dovira img {
+    max-width: 100%;
+}
+@media screen and (max-width: 500px) {
+    .dovira {
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 100%;
+        align-items: center;
+        grid-gap: 20px;
+    }
+    .dovira img {
+        max-width: 50%;
+    }
+}
