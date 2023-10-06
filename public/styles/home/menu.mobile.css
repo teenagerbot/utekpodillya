@@ -21,6 +21,8 @@ small-text {
 span#menu-burger {
     position: fixed;
     font-size: 30px;
+    background: #cfcfcf;
+    border-bottom-right-radius: 11px;
 }
 a.active.menu-item {
     background: #ffab43;

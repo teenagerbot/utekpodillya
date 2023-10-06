@@ -15,8 +15,11 @@ body {
 
 .header {
     overflow: hidden;
-    background-color: #cfcfcf;
+    background-color: #25812270;
     padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header a {
@@ -93,7 +96,7 @@ body {
     a.menu-item {
         display: flex;
         justify-content: space-between;
-        color: #258122;
+        color: #292929;
     }
     #menu-burger {
         display: none;

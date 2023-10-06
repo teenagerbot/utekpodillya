@@ -5,6 +5,7 @@
     font-size: 20px;
     transition: .3s linear;
     margin-bottom: 40px;
+    word-break: break-word;
 }
 .hidden-desktop {
     opacity: 0;

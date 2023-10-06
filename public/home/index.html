@@ -12,33 +12,36 @@
     <link rel="stylesheet" href="../styles/home/headers.css">
     <link rel="stylesheet" href="../styles/home/production.css">
     <link rel="stylesheet" href="../styles/home/dovira.css">
+    <link rel="stylesheet" href="../styles/home/footer.css">
+    <link rel="stylesheet" href="../styles/home/button.up.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
 </head>
 <body>
+<button class="up-btn"><span class="material-symbols-outlined">expand_less</span></button>
 <span class="material-symbols-outlined" id="menu-burger">menu</span>
 <div class="menu-container">
     <div class="menu">
         <div class="menu-header">
             <div class="menu-header-avatar">
                 <img src="../imgs/avatar.png" alt="avatar" class="avatar">
-                <small-text>ООО «УТЕК-ПОДІЛЛЯ»</small-text>
+                <small-text>ТОВ «УТЕК-ПОДІЛЛЯ»</small-text>
             </div>
         </div>
 <!--        <a class="active menu-item" href="#home" title="Домашня">-->
 <!--            <span class="material-symbols-outlined">home</span>-->
 <!--            <text>Домашня</text>-->
 <!--        </a>-->
-        <a href="#contact" title="Контакти" class="menu-item" title="Контакти">
+        <a href="#contact" title="Контакти" class="menu-item" title="Контакти" id="contacts-mob">
             <span class="material-symbols-outlined">contacts</span>
             <text>Контакти</text>
         </a>
-        <a href="#ref" class="menu-item" title="Референц-список">
+        <a href="#ref" class="menu-item" title="Референц-список" id="reference-mob">
             <span class="material-symbols-outlined">receipt_long</span>
             <text>Референц-список</text>
         </a>
-        <a href="#about" class="menu-item" title="Про нас">
+        <a href="#about" class="menu-item" title="Про нас" id="aboutus-mob">
             <span class="material-symbols-outlined">info</span>
             <text>Про нас</text>
         </a>
@@ -181,12 +184,104 @@
             <li>ТОВ "Техноперспектива", м. Київ.</li>
         </ol>
     </div>
+<!--    <div class="footer">-->
+<!--        <div class="contacts-foot">-->
+<!--            <h1 class="footc">Контакти</h1>-->
+<!--            <txt>29000, Украина,-->
+<!--            г. Хмельницкий,-->
+<!--            пр-ок. Проездной 10-->
+<!--                оф. 508</txt>-->
+
+<!--            <txt>Тел./факс:-->
+<!--                <a href="tel:+38 (067) 382-37-30">+38 (067) 382-37-30</a>-->
+<!--                <a href="tel:+38 (066) 163-73-50">+38 (066) 163-73-50</a></txt>-->
+
+<!--            <txt>E-mail: <a href="mailto:pochitun@gmail.com">pochitun@gmail.com</a></txt>-->
+<!--        </div>-->
+<!--    </div>-->
+    <footer class="footer">
+        <div class="footer__addr">
+            <h1 class="footer__logo">Контакти</h1>
+
+            <address>
+                29000, Україна,
+                м. Хмельницький,
+                пр-ок. Проїзний 10
+                оф. 508<br>
+                <a href="tel:+38 (067) 382-37-30" class="footer__btn">+38 (067) 382-37-30</a>
+                <a href="tel:+38 (066) 163-73-50" class="footer__btn">+38 (066) 163-73-50</a>
+                <a class="footer__btn" href="mailto:pochitun@gmail.com">Написати нам</a>
+            </address>
+        </div>
+
+        <ul class="footer__nav">
+            <li class="nav__item">
+                <h2 class="nav__title">Соціальні мережі</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">Telegram?</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Facebook?</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Instagram?</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav__item nav__item--extra">
+                <h2 class="nav__title">Категорія</h2>
+
+                <ul class="nav__ul nav__ul--extra">
+                    <li>
+                        <a href="#">Трансформатори</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Підстанції</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Інше обладнання</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav__item">
+                <h2 class="nav__title">Політика</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">Політика конфіденційності</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Умови експлуатації</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="legal">
+            <p>ТОВ «УТЕК-ПОДІЛЛЯ» &copy 2010-2013.
+                Всі права захищені.</p>
+
+            <div class="legal__links">
+                <span>Розроблено з MassMedia Group</span>
+            </div>
+        </div>
+    </footer>
 </div>
 <script src="../modules/global/errorcatcher.js"></script>
 <script src="../modules/menu/mobile.menu.js"></script>
 <script src="server.js"></script>
-<script src="../scripts/home/menu.js"></script>
 <script src="../scripts/home/showcontent.js"></script>
+<script src="../scripts/home/menu.js"></script>
+<script src="../modules/global/button.up.js"></script>
 <script src="j.js"></script>
 </body>
 </html>

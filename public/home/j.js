@@ -78,3 +78,7 @@ const params = {
 Object.assign(swiperEl, params)
 
 swiperEl.initialize();
+document.querySelector("div.app-locker").onclick = () => {
+    menu.classList.toggle('open');
+    document.querySelector("div.app-locker").style.display = "none";
+}
