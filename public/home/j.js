@@ -53,7 +53,7 @@ const params = {
   font-size: 12px;
   color: rgb(0, 0, 0);
   opacity: 1;
-  background: rgb(207, 207, 207);
+  background: rgb(235 135 13 / 40%);
       }
 :host {
   position: relative;
@@ -64,7 +64,7 @@ const params = {
 }
       .swiper-pagination-bullet-active {
         color: #fff;
-        background: #ffab43;
+        background: #eb870d;
       }
       `],
     pagination: {

@@ -10,7 +10,7 @@ img.avatar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background: #b4b3b3;
+    background: #25812270;
     padding: 5px;
 }
 
@@ -21,7 +21,7 @@ small-text {
 span#menu-burger {
     position: fixed;
     font-size: 30px;
-    background: #cfcfcf;
+    background: #e0881c;
     border-bottom-right-radius: 11px;
 }
 a.active.menu-item {

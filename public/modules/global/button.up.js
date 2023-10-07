@@ -1,20 +1,38 @@
 // Get the button:
 let mybutton = document.querySelector(".up-btn");
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "flex";
+        mybutton.style.opacity = 1;
+        mybutton.style.pointerEvents = "auto";
     } else {
-        mybutton.style.display = "none";
+        mybutton.style.opacity = 0;
+        mybutton.style.pointerEvents = "none";
     }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    const startingY = window.pageYOffset;
+    const targetY = 0;
+    const distance = targetY - startingY;
+    const duration = 1000;
+    let startTime = null;
+    function animate(currentTime) {
+        if (!startTime) {
+            startTime = currentTime;
+        }
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        const easeInOut = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        window.scrollTo(0, startingY + distance * easeInOut(progress));
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+    requestAnimationFrame(animate);
 }
-mybutton.addEventListener("click", topFunction);
+
+mybutton.onclick = () => {
+    topFunction();
+};

@@ -25,6 +25,7 @@ const About = document.querySelector(".about-us");
 const Dovira = document.querySelector(".dovira-div");
 const ReferenceList = document.querySelector(".reference-list");
 window.onscroll =() => {
+    scrollFunction()
     if (isElementVisible(About)) {
         if (!isMobile()) {
             About.classList.remove("hidden-desktop");
