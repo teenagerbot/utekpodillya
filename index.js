@@ -28,6 +28,10 @@ io.on('connection', (socket) => {
 	socket.on('test', (data) => {
 		console.log(data.username);
 	});
+	socket.on("getProducts", () => {
+		const prds = fs.readFileSync("./pr.json", "utf-8");
+		io.to(socket.id).emit("products", prds);
+	})
 	/**
 		when we sent the file via client
 		client(script.js):

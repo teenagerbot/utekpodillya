@@ -1,0 +1,80 @@
+.loader {
+    width: 297px;
+    height: 20px;
+    background: linear-gradient(90deg,#0000000d 33%,#3d533dab 50%,#0001 66%)
+    #f2f2f200;
+    background-size:300% 100%;
+    animation: l1 .7s infinite linear;
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px #2c8c29;
+    border-radius: 10px;
+}
+@keyframes l1 {
+    0% {background-position: right}
+}
+.app-locker {
+    display: block !important;
+}
+sp {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-80%);
+    color: white;
+    font-family: monospace;
+    font-size: 25px;
+    animation: sp 1.5s infinite linear;
+}
+sd {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(130%);
+    color: white;
+    font-family: monospace;
+    font-size: 25px;
+    animation: sd 1.5s infinite linear;
+}
+@-webkit-keyframes sd {
+    10% {
+        transform: translateY(130%) translateX(-50%);
+    }
+    50%, 60%, 70%, 80% {
+        transform: translateY(-130%) translateX(-50%);
+    }
+}
+@-webkit-keyframes sp {
+    10% {
+        transform: translateY(-137%) translateX(-50%);
+    }
+    50%, 60%, 70%, 80% {
+        transform: translateY(80%) translateX(-50%);
+    }
+}
+.view {
+    width: 100%;
+    height: calc(100% - 12%);
+    display: flex;
+    justify-items: center;
+    overflow-y: scroll;
+    flex-direction: inherit;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 10px;
+}
+@media screen and (min-width: 500px) {
+    .view {
+        grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+    }
+}
+@media screen and (max-width: 500px) {
+    .view {
+        grid-template-columns: 100%;
+    }
+}
+.mdl-button {
+    background: #30572f;
+}
