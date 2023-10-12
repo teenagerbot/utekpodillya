@@ -1,0 +1,10 @@
+div#suneditor_sample {
+    width: 100% !important;
+    height: 98% !important;
+}
+.se-wrapper {
+    height: 98% !important;
+}
+.se-wrapper-inner.se-wrapper-wysiwyg.sun-editor-editable {
+    height: auto !important;
+}

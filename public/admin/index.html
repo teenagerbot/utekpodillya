@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <!--GLOBAL CSS START-->
+    <link rel="stylesheet" href="../modules/global/css/android/button.css">
+    <link rel="stylesheet" href="../styles/home/button.up.css">
+    <link rel="stylesheet" href="../styles/home/footer.css">
+    <link rel="stylesheet" href="../styles/home/menu.mobile.css">
+    <link rel="stylesheet" href="../styles/home/header.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <!--GLOBAL CSS END-->
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ua.js"></script>
+<link rel="stylesheet" href="./css/editor.css">
+</head>
+<body>
+    <button class="up-btn android-button"><span class="material-symbols-outlined">expand_less</span></button>
+<span class="material-symbols-outlined" id="menu-burger">menu</span>
+<div class="menu-container">
+    <div class="menu">
+        <div class="menu-header">
+            <div class="menu-header-avatar">
+                <img src="../imgs/avatar.png" alt="avatar" class="avatar">
+                <small-text>ТОВ «УТЕК-ПОДІЛЛЯ»</small-text>
+            </div>
+        </div>
+        <a href="../home/" class="menu-item android-button" id="home-mob">
+            <span class="material-symbols-outlined">home</span>
+            <text>Головна</text>
+        </a>
+    </div>
+</div>
+<div id="web">
+    <div class="app-locker"></div>
+    <div class="header">
+        <a href="#default" class="logo">
+            <img src="../imgs/logo.png" alt="logo" class="logo">
+        </a>
+        <div class="header-right">
+            <a href="../home/" class="menu-item android-button" title="Головна" id="home-mob">
+                <span class="material-symbols-outlined">home</span>
+                <text>Головна</text>
+            </a>
+        </div>
+    </div>
+    <textarea id="sample"></textarea>
+    </div>
+    <script src="../modules/global/js/android/button.js"></script>
+    <script src="../modules/menu/mobile.menu.js"></script>
+    <script src="../scripts/home/menu.js"></script>
+    <script src="../modules/global/button.up.js"></script>
+    <script src="../global/index.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
