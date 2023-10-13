@@ -2,6 +2,7 @@
     width: 32%;
     height: 28%;
     background: #507c4f;
+    word-break: break-word;
 }
 .demo-card-event > .mdl-card__actions {
     border-color: rgba(255, 255, 255, 0.2);
