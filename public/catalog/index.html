@@ -17,10 +17,20 @@
     <!--GLOBAL CSS END-->
     <link rel="stylesheet" href="../styles/catalog/index.css">
     <link rel="stylesheet" href="../styles/catalog/cards.css">
+    <link rel="stylesheet" href="../styles/catalog/proddetails.css">
+    <link rel="stylesheet" href="../styles/catalog/fileviewer.css">
+    <script src="https://unpkg.com/js_tooltip@1.0.0/index.js"></script>
 
     <script src="../modules/global/server.js"></script>
 </head>
 <body>
+<div class="view-file">
+<div class="navbar">
+    <button class="material-symbols-outlined" id="close">close</button>
+</div>
+    <div class="webview"></div>
+    <div class="bottom"></div>
+</div>
 <div class="loader">
     <sp>Завантажуємо</sp>
     <sd>Зачекайте...</sd>
@@ -55,7 +65,10 @@
         </div>
     </div>
     <div class="view">
-        <div class="view-prod"></div>
+        <div class="view-prod">
+            <button class="material-symbols-outlined" id="back">arrow_back</button>
+            <div class="viewrdk"></div>
+        </div>
         <div class="view-prods"></div>
     </div>
     </div>

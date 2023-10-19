@@ -6,7 +6,7 @@
     background-size:300% 100%;
     animation: l1 .7s infinite linear;
     position: fixed;
-    z-index: 2;
+    z-index: 100001;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -57,6 +57,8 @@ sd {
     width: 100%;
     height: calc(100% - 12%);
     overflow-y: scroll;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .view-prods {
     width: 100%;
@@ -90,7 +92,9 @@ button.button.android-button {
     cursor: pointer;
 }
 
-
+.view-prod {
+    display: none;
+}
 
 .btn span {
     position: absolute;

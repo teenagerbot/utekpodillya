@@ -6,5 +6,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="slideout" level="application" />
+    <orderEntry type="library" name="tooltip" level="application" />
+    <orderEntry type="library" name="js_tooltip" level="application" />
   </component>
 </module>
