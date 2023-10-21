@@ -1,3 +1,4 @@
+const { PWD, USER } = require("./user.js");
 const http = require("http");
 const cookieManager = require('cookie-parser');
 const path = require('path');
@@ -42,6 +43,22 @@ app.get("/hello/:numbersession", (req, res) => {
 		res.end();
 	}
 })
+app.post('/login', (req, res) => {
+  const adminname = req.body.adminname;
+  const adminpassword = req.body.adminpassword;
+  if (adminname === USER && adminpassword === PWD) {
+    res.cookie("admin", "hello", {
+      secure: true,
+      httpOnly: true,
+      maxAge: 672 * 60 * 60 * 1000
+    });
+    res.redirect("/adminer");
+    res.end();
+  } else {
+    res.status(404)
+    res.end();
+  }
+});
 app.get(/\/?.+/, (req, res) => {
 	console.log(req.url)
 })
