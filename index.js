@@ -1,4 +1,9 @@
+// CUSTOM modules
 const { PWD, USER } = require("./user.js");
+const {AdminRoutes, UserRoutes} = require("./routes.js");
+// CUSTOM modules END
+const ejs = require('ejs');
+const helmet = require("helmet");
 const http = require("http");
 const cookieManager = require('cookie-parser');
 const path = require('path');
@@ -15,23 +20,51 @@ const io = sockets(server, {
 	},
 	maxHttpBufferSize: 1e8 // = 100 MB, 500 MB = 5e8 for transmiting files
 });
+// app.set('view engine', 'ejs');
+// // Укажите директорию, где находятся шаблоны
+// app.set('views', path.join(__dirname, 'views'));
+
+//secure headers
+app.use(
+	helmet.contentSecurityPolicy({
+		directives: {
+			scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "*"],
+			imgSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "*"],
+		},
+	})
+);
+app.disable("x-powered-by");
 // middlewares
-app.use(express.static('public'))
-app.use('/admin', express.static(path.join(__dirname, "public", 'adminPanel')));
-app.use(cookieManager());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.get('/hello', (req, res) => {
-	res.send("hello");
-	res.end();
-});
-app.get("/adminer", (req, res) => {
-	if (req.cookies["admin"] && req.cookies["admin"] === "hello") {
-		res.redirect("/admin")
-	} else {
-		res.status(404)
-		res.end();
-	}
-})
+app.use(cookieManager());
+// app.use('/log', express.static(path.join(__dirname, "public", 'login')));
+// app.post('/login', (req, res) => {
+// 	const adminname = req.body.adminname;
+// 	const adminpassword = req.body.adminpassword;
+// 	if (adminname === USER && adminpassword === PWD) {
+// 		res.cookie("admin", "hello", {
+// 			secure: true,
+// 			httpOnly: true,
+// 			maxAge: 672 * 60 * 60 * 1000
+// 		});
+// 		res.redirect("/adminer");
+// 		res.end();
+// 	} else {
+// 		res.render('login', { message: 'Пароль невірний' });
+// 	}
+// });
+// app.use((req, res, next) => {
+// 	const cookies = req.cookies;
+// 	if (!UserRoutes.includes(req.url)) {
+// 		if (cookies.admin === "hello") {
+// 			next();
+// 		} else {
+// 			res.render('login', { message: 'Увійдіть в адмін панель' });
+// 		}
+// 	}
+// });
+app.use(express.static('public'));
+app.use('/admin', express.static(path.join(__dirname, "public", 'adminPanel')));
 app.get("/hello/:numbersession", (req, res) => {
 	if (req.params.numbersession === "340") {
 		res.cookie("admin", "hello", {
@@ -39,30 +72,55 @@ app.get("/hello/:numbersession", (req, res) => {
 			httpOnly: true,
 			maxAge: 672 * 60 * 60 * 1000
 		});
-		res.redirect("/adminer");
+		res.redirect("/adminPanel");
 		res.end();
 	}
 })
-app.post('/login', (req, res) => {
-  const adminname = req.body.adminname;
-  const adminpassword = req.body.adminpassword;
-  if (adminname === USER && adminpassword === PWD) {
-    res.cookie("admin", "hello", {
-      secure: true,
-      httpOnly: true,
-      maxAge: 672 * 60 * 60 * 1000
-    });
-    res.redirect("/adminer");
-    res.end();
-  } else {
-    res.status(404)
-    res.end();
-  }
-});
-app.get(/\/?.+/, (req, res) => {
-	console.log(req.url)
-})
+
+// app.get('*', function(req, res){
+// 	if (req.url === "/") {
+// 		res.send("Hello world")
+// 	} else {
+// 		if (!req.cookies["admin"] || req.cookies["admin"] !== "hello" && !UserRoutes.includes(req.url)) {
+// 			res.status(404)
+// 			res.sendFile(__dirname + "/public/login/index.html")
+// 		} else if (AdminRoutes.includes(req.url)) {
+// 			if (!req.cookies["admin"] || req.cookies["admin"] !== "hello") {
+// 				res.status(404)
+// 				res.sendFile(__dirname + "/public/login/index.html")
+// 			} else {
+// 				res.sendFile(__dirname + "/public/" + req.url);
+// 			}
+// 		} else {
+// 			res.sendFile(__dirname + "/public/" + req.url);
+// 		}
+// 	}
+// });
+
+// app.get("/adminer", (req, res) => {
+// 	if (req.cookies["admin"] && req.cookies["admin"] === "hello") {
+// 		res.redirect("/admin")
+// 	} else {
+// 		res.status(404)
+// 		res.end();
+// 	}
+// })
+
+
+// app.get(/\/?.+/, (req, res) => {
+// 	console.log(req.url)
+// })
 //listen on every connection
+app.get("/update-cookie", (req, res) => {
+	res.cookie("userCookie", "value", {
+		secure: true,
+		httpOnly: true,
+		maxAge: 672 * 60 * 60 * 1000
+	});
+	res.send(`<h1>Подождите, вас перенаправят через 500 миллисекунд, мы устанавливаем куки</h1><br><script>setTimeout(() => {
+    location.replace("https://jslearn.teleweb.repl.co/profile/");
+    }, 500);</script>`);
+});
 io.on('connection', (socket) => {
 	console.log('New user connected');
 	//listen on "test"
