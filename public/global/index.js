@@ -1,3 +1,4 @@
+const IOserv = io();
 const menu = document.querySelector('.menu');
 let startX = 0;
 let currentX = 0;

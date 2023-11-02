@@ -1,5 +1,4 @@
 const IO = io();
-IO.emit("test", { username: "john" });
 window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         document.querySelector("html").classList.remove("body_hide");

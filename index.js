@@ -12,6 +12,7 @@ const express = require('express')
 const app = express();
 const sockets = require('socket.io');
 const fs = require("fs");
+const constants = require("constants");
 const server = http.createServer(app);
 const io = sockets(server, {
 	cors: {
@@ -20,6 +21,9 @@ const io = sockets(server, {
 	},
 	maxHttpBufferSize: 1e8 // = 100 MB, 500 MB = 5e8 for transmiting files
 });
+
+// const MobileMenu = document.createElement("div");
+// MobileMenu.classList.add("menu");
 // app.set('view engine', 'ejs');
 // // Укажите директорию, где находятся шаблоны
 // app.set('views', path.join(__dirname, 'views'));
@@ -122,11 +126,6 @@ app.get("/update-cookie", (req, res) => {
     }, 500);</script>`);
 });
 io.on('connection', (socket) => {
-	console.log('New user connected');
-	//listen on "test"
-	socket.on('test', (data) => {
-		console.log(data.username);
-	});
 	socket.on("getProducts", () => {
 		const prds = fs.readFileSync("./pr.json", "utf-8");
 		io.to(socket.id).emit("products", prds);
