@@ -4,6 +4,7 @@ const {AdminRoutes, UserRoutes} = require("./routes.js");
 // CUSTOM modules END
 const ejs = require('ejs');
 const helmet = require("helmet");
+const cks = require("cookie");
 const http = require("http");
 const cookieManager = require('cookie-parser');
 const path = require('path');
@@ -116,7 +117,7 @@ app.get("/hello/:numbersession", (req, res) => {
 // })
 //listen on every connection
 app.get("/update-cookie", (req, res) => {
-	res.cookie("userCookie", "value", {
+	res.cookie("ads", "fG&8qLw$9hP#2jN@5zC*6eX+rT7sD!1mYpV(bA3)", {
 		secure: true,
 		httpOnly: true,
 		maxAge: 672 * 60 * 60 * 1000
@@ -129,6 +130,14 @@ io.on('connection', (socket) => {
 	socket.on("getProducts", () => {
 		const prds = fs.readFileSync("./pr.json", "utf-8");
 		io.to(socket.id).emit("products", prds);
+	})
+	socket.on("checkAccount", () => {
+		const Cooks = cks.parse(socket.handshake.headers.cookie)
+		if (Cooks.ads !== "fG&8qLw$9hP#2jN@5zC*6eX+rT7sD!1mYpV(bA3)") {
+			io.to(socket.id).emit("isadmin", "false");
+		} else {
+			io.to(socket.id).emit("isadmin", "true");
+		}
 	})
 	socket.on("getFile", (file) => {
 		if (fs.existsSync(`./prodfiles/${file}.html`)) {
