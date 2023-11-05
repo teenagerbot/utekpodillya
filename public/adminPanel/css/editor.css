@@ -85,3 +85,14 @@ linka:hover {
     background: #00000066;
     color: #00ff008f;
 }
+button#save {
+    position: fixed;
+    z-index: 3;
+    bottom: 20px;
+    margin-left: 20px;
+    background: #eb870d;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+}

@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../icons/iconv.png">
+    <link rel="stylesheet" href="./style.css">
     <title>Login</title>
 </head>
 <body>
-<form action="/login" method="post">
-    <input type="text" name="adminname">
-    <input type="password" name="adminpassword">
-    <input type="submit">
-</form>
+<div class="login">
+    <h1>Увійдіть в панель</h1>
+    <form>
+        <input type="text" name="adminname" placeholder="Нік адміністаротора" autocomplete="off">
+        <input type="password" name="adminpassword" placeholder="Пароль адміністратора" autocomplete="off">
+        <div class="facebook">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <error>Невірний логін або пароль</error>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Увійти</button>
+    </form>
+</div>
+<script src="../modules/global/server.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>

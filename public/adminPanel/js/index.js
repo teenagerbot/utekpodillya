@@ -63,7 +63,13 @@ ServerConnector.on("isadmin", data=> {
 	setTimeout(() => {
 		if (data === "false") {
 			document.querySelector(".word").remove();
-			document.querySelector(".overlay").innerHTML = `<access>Access denied <linka onclick="location.replace('/login')">Увійти в панель</linka></access>`
+			document.querySelector(".overlay").innerHTML = `<access>Access denied <linka>Увійти в панель</linka></access>`;
+			document.querySelector("linka").onclick = () => {
+				location.replace('/login')
+			}
+		} else {
+			document.querySelector("div.stop").remove();
+			document.querySelector(".webcontent").classList.remove("hide")
 		}
 	}, 2000)
 })
@@ -136,10 +142,13 @@ Ticker.prototype.loop = function() {
 	}
 };
 
-$words = $( '.word' );
+$words = $('.word');
 
 $words.each( function() {
 	var $this = $( this ),
 		ticker = new Ticker( $this ).reset();
 	$this.data( 'ticker', ticker  );
 });
+document.querySelector("#save").onclick = () => {
+	ServerConnector.emit("storeFile", editor.getContents());
+}

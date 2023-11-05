@@ -4,6 +4,7 @@ const {AdminRoutes, UserRoutes} = require("./routes.js");
 // CUSTOM modules END
 const ejs = require('ejs');
 const helmet = require("helmet");
+const multer = require('multer');
 const cks = require("cookie");
 const http = require("http");
 const cookieManager = require('cookie-parser');
@@ -27,7 +28,7 @@ const io = sockets(server, {
 // MobileMenu.classList.add("menu");
 // app.set('view engine', 'ejs');
 // // Укажите директорию, где находятся шаблоны
-// app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'public'));
 
 //secure headers
 app.use(
@@ -42,32 +43,27 @@ app.disable("x-powered-by");
 // middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieManager());
+app.use(express.json());
+app.use(multer().none());
 // app.use('/log', express.static(path.join(__dirname, "public", 'login')));
-// app.post('/login', (req, res) => {
-// 	const adminname = req.body.adminname;
-// 	const adminpassword = req.body.adminpassword;
-// 	if (adminname === USER && adminpassword === PWD) {
-// 		res.cookie("admin", "hello", {
-// 			secure: true,
-// 			httpOnly: true,
-// 			maxAge: 672 * 60 * 60 * 1000
-// 		});
-// 		res.redirect("/adminer");
-// 		res.end();
-// 	} else {
-// 		res.render('login', { message: 'Пароль невірний' });
-// 	}
-// });
-// app.use((req, res, next) => {
-// 	const cookies = req.cookies;
-// 	if (!UserRoutes.includes(req.url)) {
-// 		if (cookies.admin === "hello") {
-// 			next();
-// 		} else {
-// 			res.render('login', { message: 'Увійдіть в адмін панель' });
-// 		}
-// 	}
-// });
+app.post('/login', (req, res) => {
+	const adminname = req.body.adminname;
+	const adminpassword = req.body.adminpassword;
+	if (adminname === USER && adminpassword === PWD) {
+		res.cookie("ads", "fG&8qLw$9hP#2jN@5zC*6eX+rT7sD!1mYpV(bA3)", {
+			secure: true,
+			httpOnly: true,
+			maxAge: 672 * 60 * 60 * 1000
+		});
+		res.json({
+			message: "1"
+		})
+	} else {
+		res.json({
+			message: "0"
+		})
+	}
+});
 app.use(express.static('public'));
 app.use('/admin', express.static(path.join(__dirname, "public", 'adminPanel')));
 app.get("/hello/:numbersession", (req, res) => {
@@ -151,6 +147,9 @@ io.on('connection', (socket) => {
 		} else {
 			io.to(socket.id).emit("errorReadProd");
 		}
+	})
+	socket.on("storeFile", (file) => {
+
 	})
 	/**
 		when we sent the file via client
