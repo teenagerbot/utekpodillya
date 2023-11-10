@@ -96,3 +96,75 @@ button#save {
     font-size: 25px;
     color: white;
 }
+.newitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    background: #eb870d;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    margin: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: white;
+    font-size: 26px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+img.addicns {
+    width: 30px;
+    pointer-events: none;
+    user-select: none;
+    margin-right: 10px;
+}
+
+input#nameprod {
+    font-size: 20px;
+    outline: none;
+    position: relative;
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 40%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px #eb870d solid;
+}
+.editor {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translate(0px, -50%);
+}
+
+.newitem:first-child {
+    margin-bottom: 10px;
+}
+.items {
+    position: absolute;
+    background: #bf6e0c;
+    top: 0px;
+    z-index: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    height: 0;
+    transition: .2s linear;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.items.show {
+    height: 62px;
+    box-shadow: 0px 6px 3px 0px black;
+}
+span.subitem {
+    display: block;
+}
+span.subitem:hover {
+    text-shadow: 0 0 1px black;
+    color: transparent;
+}

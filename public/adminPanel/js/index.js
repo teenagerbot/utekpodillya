@@ -1,62 +1,62 @@
-const editor = SUNEDITOR.create((document.getElementById('sample') || 'sample'),{
-    "textTags": {
-		"bold": "b",
-		"underline": "u",
-		"italic": "i",
-		"strike": "s"
-	},
-	"mode": "classic",
-	"rtl": false,
-	"katex": "window.katex",
-	"resizingBarContainer": "#custom_bottombar",
-	"charCounter": true,
-	"imageGalleryUrl": "https://etyswjpn79.execute-api.ap-northeast-1.amazonaws.com/suneditor-demo",
-	"videoFileInput": false,
-	"audioFileInput": true,
-	"tabDisable": false,
-	"placeholder": "Напишіть опис",
-	"buttonList": [
-		[
-			"undo",
-			"redo",
-			"font",
-			"fontSize",
-			"formatBlock",
-			"paragraphStyle",
-			"blockquote",
-			"bold",
-			"underline",
-			"italic",
-			"strike",
-			"subscript",
-			"superscript",
-			"fontColor",
-			"hiliteColor",
-			"textStyle",
-			"removeFormat",
-			"outdent",
-			"indent",
-			"align",
-			"horizontalRule",
-			"list",
-			"lineHeight",
-			"table",
-			"link",
-			"image",
-			"video",
-			"audio",
-			"math",
-			"imageGallery",
-			"fullScreen",
-			"showBlocks",
-			"codeView",
-			"preview",
-			"print"
-		]
-	],
-	"lang": SUNEDITOR_LANG.ua,
-	"lang(In nodejs)": "ua"
-});
+// const editor = SUNEDITOR.create((document.getElementById('sample') || 'sample'),{
+//     "textTags": {
+// 		"bold": "b",
+// 		"underline": "u",
+// 		"italic": "i",
+// 		"strike": "s"
+// 	},
+// 	"mode": "classic",
+// 	"rtl": false,
+// 	"katex": "window.katex",
+// 	"resizingBarContainer": "#custom_bottombar",
+// 	"charCounter": true,
+// 	"imageGalleryUrl": "https://etyswjpn79.execute-api.ap-northeast-1.amazonaws.com/suneditor-demo",
+// 	"videoFileInput": false,
+// 	"audioFileInput": true,
+// 	"tabDisable": false,
+// 	"placeholder": "Напишіть опис",
+// 	"buttonList": [
+// 		[
+// 			"undo",
+// 			"redo",
+// 			"font",
+// 			"fontSize",
+// 			"formatBlock",
+// 			"paragraphStyle",
+// 			"blockquote",
+// 			"bold",
+// 			"underline",
+// 			"italic",
+// 			"strike",
+// 			"subscript",
+// 			"superscript",
+// 			"fontColor",
+// 			"hiliteColor",
+// 			"textStyle",
+// 			"removeFormat",
+// 			"outdent",
+// 			"indent",
+// 			"align",
+// 			"horizontalRule",
+// 			"list",
+// 			"lineHeight",
+// 			"table",
+// 			"link",
+// 			"image",
+// 			"video",
+// 			"audio",
+// 			"math",
+// 			"imageGallery",
+// 			"fullScreen",
+// 			"showBlocks",
+// 			"codeView",
+// 			"preview",
+// 			"print"
+// 		]
+// 	],
+// 	"lang": SUNEDITOR_LANG.ua,
+// 	"lang(In nodejs)": "ua"
+// });
 const ServerConnector = io();
 ServerConnector.emit("checkAccount");
 ServerConnector.on("isadmin", data=> {
@@ -69,7 +69,17 @@ ServerConnector.on("isadmin", data=> {
 			}
 		} else {
 			document.querySelector("div.stop").remove();
-			document.querySelector(".webcontent").classList.remove("hide")
+			document.querySelector(".webcontent").classList.remove("hide");
+			document.body.onclick = function (e) {
+				if (e.target.className !== "newitem") {
+					document.querySelectorAll(".items").forEach(elem => {
+						elem.classList.remove("show");
+					})
+				} else if (e.target.className === "newitem") {
+					document.querySelector(".items.show")?.classList.toggle("show");
+					e.target.querySelector(".items").classList.toggle("show");
+				}
+			}
 		}
 	}, 2000)
 })
