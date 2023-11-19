@@ -134,6 +134,18 @@ io.on('connection', (socket) => {
 		} else {
 			io.to(socket.id).emit("isadmin", "true");
 		}
+	});
+	socket.on("requestCategories", () => {
+		const cats = JSON.parse(fs.readFileSync("./pr.json", "utf-8"))["categories"];
+		io.to(socket.id).emit("getCategories", cats);
+	})
+	socket.on("update", data => {
+		if (data.type === "category") {
+			let Obj = JSON.parse(fs.readFileSync("./pr.json", "utf-8"));
+			Obj["categories"] = data.value;
+			fs.writeFileSync("pr.json", JSON.stringify(Obj,  null,  2));
+			io.to(socket.id).emit("Saved");
+		}
 	})
 	socket.on("getFile", (file) => {
 		if (fs.existsSync(`./prodfiles/${file}.html`)) {

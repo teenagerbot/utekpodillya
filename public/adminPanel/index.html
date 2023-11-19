@@ -58,22 +58,26 @@
         </div>
         <div class="editor">
             <!--        <input id="nameprod" placeholder="Введіть назву">-->
-            <div class="newitem" id="add"><img src="../imgs/add.svg" alt="add" class="addicns"> Додати
-                <div class="items">
-                    <span class="subitem cat">Категорію</span>
-                    <span class="subitem prod">Продукт</span>
+            <div class="controlsprojects">
+                <div class="newitem" id="add"><img src="../imgs/add.svg" alt="add" class="addicns"> Додати
+                    <div class="items">
+                        <span class="subitem" itemname="cat">Категорію</span>
+                        <span class="subitem" itemname="prod">Продукт</span>
+                    </div>
+                </div>
+                <div class="newitem" id="delete"><img src="../imgs/remove.svg" alt="add" class="addicns"> Видалити
+                    <div class="items">
+                        <span class="subitem" itemname="cat">Категорію</span>
+                        <span class="subitem" itemname="prod">Продукт</span>
+                    </div>
                 </div>
             </div>
-            <div class="newitem" id="delete"><img src="../imgs/remove.svg" alt="add" class="addicns"> Видалити
-                <div class="items">
-                    <span class="subitem cat">Категорію</span>
-                    <span class="subitem prod">Продукт</span>
-                </div>
-            </div>
+            <div class="main"></div>
         </div>
         <button id="save">Зберегти</button>
     </div>
 </div>
+<script src="../global/dialog.js"></script>
 <script src="../modules/global/server.js"></script>
 <script src="../modules/global/js/android/button.js"></script>
 <script src="../modules/menu/mobile.menu.js"></script>
