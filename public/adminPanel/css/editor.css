@@ -168,3 +168,128 @@ span.subitem:hover {
     text-shadow: 0 0 1px black;
     color: transparent;
 }
+
+.list-prods {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background: #8fb88e;
+    user-select: none;
+    padding: 10px;
+    max-height: 64%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-word;
+    box-shadow: 0px 0px 20px 3px;
+}
+
+itemlist.itemlist {
+    display: flex;
+    font-size: 25px;
+    cursor: pointer;
+    align-items: center;
+}
+
+itemlist.itemlist::before {
+    content: "⦿";
+    color: white;
+    margin-right: 10px;
+}
+
+itemlist.itemlist:hover {
+    background: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+itemlist.itemlist:hover::before, .selected::before {
+    content: "⦿" !important;
+    color: #8fb88e !important;
+    margin-right: 10px !important;
+}
+
+.controls {
+    position: sticky;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@media only screen and (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .controls button:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .list-prods {
+        width: 30%;
+    }
+    .editcateg, .delcateg {
+        display: none;
+    }
+}
+
+.controls button {
+    font-size: 24px;
+    background: #eb870d;
+    color: white;
+    cursor: pointer;
+}
+
+button.disabled {
+    pointer-events: none;
+    background: #ffc783;
+}
+.selected {
+    background: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.cr {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: calc(10px);
+    background: white;
+}
+.cr.showed {
+    opacity: 1;
+    pointer-events: auto;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+}
+span.cr img {
+    width: 20px;
+}
+itemlist.itemlist:hover .cr {
+    opacity: 1;
+    pointer-events: auto;
+}
+.cr img:hover {
+    transform: scale(1.5);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #258122a3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #258122a3;
+}

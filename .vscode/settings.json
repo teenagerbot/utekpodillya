@@ -1,0 +1,15 @@
+{
+    "workbench.colorCustomizations": {
+        "editorUnnecessaryCode.opacity": "#ffffff",
+        "editorHoverWidget.background": "#000000",
+        "editorHoverWidget.border": "#00ff15",
+        "editorHoverWidget.foreground": "#2ae72a",
+        "editorHoverWidget.highlightForeground": "#c8ff00",
+        "editorHoverWidget.statusBarBackground": "#000000",
+        "editor.hoverHighlightBackground": "#40da19",
+        "editorStickyScrollHover.background": "#df1717",
+        "activityBar.background": "#0F0A9B",
+        "titleBar.activeBackground": "#150DDA",
+        "titleBar.activeForeground": "#FDFDFF"
+    }
+}

@@ -135,6 +135,21 @@ io.on('connection', (socket) => {
 			io.to(socket.id).emit("isadmin", "true");
 		}
 	});
+	socket.on("removeCategory", data => {
+		const Obj = JSON.parse(fs.readFileSync("./pr.json", "utf-8"));
+		Obj["categories"].splice(Obj["categories"].indexOf(data), 1);
+		delete Obj[data];
+		console.log(Object.keys(Obj), Obj[data])
+		fs.writeFileSync("pr.json", JSON.stringify(Obj,  null,  2));
+		io.to(socket.id).emit("Saved", {
+			action: "removed",
+			category: data
+		});
+	})
+	socket.on("getlist", () => {
+		const list = JSON.parse(fs.readFileSync("./pr.json", "utf-8"))["categories"];
+		io.to(socket.id).emit("sendlist", list);
+	})
 	socket.on("requestCategories", () => {
 		const cats = JSON.parse(fs.readFileSync("./pr.json", "utf-8"))["categories"];
 		io.to(socket.id).emit("getCategories", cats);
@@ -144,7 +159,9 @@ io.on('connection', (socket) => {
 			let Obj = JSON.parse(fs.readFileSync("./pr.json", "utf-8"));
 			Obj["categories"] = data.value;
 			fs.writeFileSync("pr.json", JSON.stringify(Obj,  null,  2));
-			io.to(socket.id).emit("Saved");
+			io.to(socket.id).emit("Saved", {
+				action: "updated"
+			});
 		}
 	})
 	socket.on("getFile", (file) => {

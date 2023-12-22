@@ -1,0 +1,84 @@
+.__ddv {
+    position: fixed;
+    z-index: 300;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 10px;
+    font-size: 25px;
+    width: 50%;
+    border: 2px red solid;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 10px red;
+}
+
+span#caccept {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+    margin: auto;
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+cclose#cclose {
+    cursor: pointer;
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+    padding: 0px;
+}
+
+.ccontrols {
+    text-align: right;
+}
+
+ccls {
+    transform: rotate(45deg);
+    display: inline-block;
+    font-size: 33px;
+    user-select: none;
+}
+
+cclose#cclose:hover {
+    background: linear-gradient(0deg, #ed0000 47%, white, #f1a6a6 50%);
+    box-shadow: inset 0px 0px 10px red;
+    color: white;
+    border-radius: 10px;
+}
+
+span#caccept:hover {
+    background: linear-gradient(0deg, #31af08 47%, white, #a6f1a9 50%);
+    box-shadow: inset 0px 0px 10px #10ff00;
+    color: white;
+    border-radius: 10px;
+}
+
+span.ctext {
+    display: block;
+    border-top: 2px #e35656 solid;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+span#cdecline {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+    margin: auto;
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+span#cdecline:hover {
+    background: linear-gradient(0deg, #afa208 47%, white, #f1e5a6 50%);
+    box-shadow: inset 0px 0px 10px #efff00;
+    color: white;
+    border-radius: 10px;
+}
